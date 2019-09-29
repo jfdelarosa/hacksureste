@@ -19,6 +19,19 @@ export default {
   }),
   created() {
     this.loading = true;
+    // fetch("https://smarcities.000webhostapp.com/Proyecto/list_tasks.php", {
+    //   method: "POST"
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     this.loading = false;
+    //     console.log(res);
+    //     this.events = res.result;
+    //   })
+    //   .catch(e => {
+    //     console.log(e);
+    //   });
+
     this.$axios
       .$get("http://5d900d85b9f5430014c26e65.mockapi.io/tasks")
       .then(res => {

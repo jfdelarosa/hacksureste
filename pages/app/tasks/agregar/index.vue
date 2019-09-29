@@ -30,7 +30,9 @@ export default {
       nombre: "",
       titulo: "",
       description: "",
-      points: 0
+      points: 0,
+      duration: 0,
+      open_date: ""
     }
   }),
   methods: {
@@ -53,34 +55,9 @@ export default {
           console.log(e);
         });
     },
-    sendTaskWithUser() {
+    saveTask() {
       let payload = {
-        type_id: this.task.type_id,
-        task_name: this.task.nombre,
-        task_description: this.task.description,
-        task_points: this.task.points
-      };
-      var data = new FormData();
-      data.append("json", JSON.stringify(payload));
-      fetch("https://smarcities.000webhostapp.com/Proyecto/add_task.php", {
-        method: "POST",
-        body: data
-      })
-        .then(res => res.json())
-        .then(res => {
-          if (res.res) {
-            this.$router.push({
-              name: "app-tasks"
-            });
-          }
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    },
-    sendTask() {
-      let payload = {
-        type_id: this.task.type_id,
+        type_id: 1,
         task_name: this.task.titulo,
         task_description: this.task.description,
         task_points: this.task.points
@@ -93,51 +70,21 @@ export default {
       })
         .then(res => res.text())
         .then(res => {
-          console.log(res);
+          if (res.res) {
+            this.$router.push({
+              name: "app-tasks-ver"
+            });
+          }
         })
         .catch(e => {
           console.log(e);
         });
-    },
-    saveTask() {
-      if (this.task.nombre) {
-        this.sendTaskWithUser();
-      } else {
-        this.sendTask();
-      }
-    },
-    querySearch(queryString, cb) {
-      let payload = {
-        user_name: queryString
-      };
-      var data = new FormData();
-      data.append("json", JSON.stringify(payload));
-      fetch("https://smarcities.000webhostapp.com/Proyecto/list_users.php", {
-        method: "POST",
-        body: data
-      })
-        .then(res => res.json())
-        .then(res => {
-          let results = res.result.map(item => {
-            item.value = item.user_name;
-            return item;
-          });
-          cb(results);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    },
-    handleSelect(item) {
-      console.log(item);
-    }
-  },
-  mounted() {
-    let name = this.$route.params.name;
-    if (name) {
-      this.getUser(name);
-      // this.task.nombre = name;
     }
   }
 };
 </script>
+<style>
+.el-input-number {
+  width: 100%;
+}
+</style>

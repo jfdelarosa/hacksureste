@@ -17,8 +17,9 @@ el-container
           template(slot='title')
             i.el-icon-s-order
             | Tareas
-          el-menu-item(index='app-tasks' :route="{name: 'app-tasks'}") Ver tareas
-          el-menu-item(index='app-tasks-agregar' :route="{name: 'app-tasks-agregar-name'}") Añadir tarea
+          el-menu-item(index='app-tasks-ver' :route="{name: 'app-tasks-ver'}") Ver tareas
+          el-menu-item(index='app-tasks-agregar' :route="{name: 'app-tasks-agregar'}") Añadir tareas
+          el-menu-item(index='app-tasks-asignar' :route="{name: 'app-tasks-asignar'}") Asignar tareas
           el-menu-item(index='app-tasks-types' :route="{name: 'app-tasks-types'}") Categorías
         //- el-menu-item(index='tasks' :route="{name: 'app-tasks'}")
           i.el-icon-s-order
@@ -58,6 +59,14 @@ body {
 }
 .el-menu {
   border: none;
+}
+.el-header {
+  background: #3c484e;
+  color: white;
+  height: auto !important;
+}
+.el-header .header {
+  padding: 1rem 0;
 }
 .el-submenu__title,
 .el-menu-item {
