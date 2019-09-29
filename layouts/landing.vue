@@ -34,7 +34,7 @@ el-container
         el-menu-item.has-button.pull-right(v-if="user" index="app" :route="{name: 'app'}")
           el-button(type="primary" round) Ir a la App
     div
-      h1.title KatBox
+      h1.title CatBox
       h3.subtitle Aumenta la productividad y la felicidad de tus empleados
     svg(viewBox='0 0 100 25' preserveAspectRatio="none" height="200px")
         path(fill='#FFFFFF' opacity='0.7' d='M0 30 V15 Q30 3 60 15 V30z')

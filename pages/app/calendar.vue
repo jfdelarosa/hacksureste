@@ -32,6 +32,13 @@ export default {
           );
           item.startDate = eventStart;
           item.endDate = eventEnd;
+          item.content =
+            "<strong>" +
+            item.task_name +
+            "</strong><br />" +
+            item.task_points +
+            " punto" +
+            (item.tasks_points > 1 ? "" : "s");
           item.class = "clase" + item.type_id;
           return item;
         });
@@ -49,13 +56,18 @@ export default {
 .vuecal__event {
   padding: 1rem 0;
 }
+.vuecal__event-time {
+  display: none;
+}
 .clase1 {
   background: #bdc3c7;
 }
 .clase2 {
   background: #e67e22;
+  color: white;
 }
 .clase3 {
   background: #e74c3c;
+  color: white;
 }
 </style>

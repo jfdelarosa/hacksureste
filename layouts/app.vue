@@ -41,6 +41,7 @@ body,
 }
 body {
   margin: 0;
+  background: #f0f0f0;
 }
 .el-container {
   min-height: 100%;

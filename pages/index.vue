@@ -33,7 +33,7 @@
           el-col.has-text(:xs="24" :sm="12" :md="16" :lg="16" :xl="16")
             .text
               h3 ¡Encuentra al empleado del mes!
-              p Compara a todos tus colaboradores de una forma imparcial
+              p Compara a todos tus colaboradores y encuentra las tareas ideales para cada uno de ellos
     section.big
       .container
         el-row(:gutter="0" type="flex" align="middle")
