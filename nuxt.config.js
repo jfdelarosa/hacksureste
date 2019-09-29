@@ -1,7 +1,6 @@
 module.exports = {
   mode: "spa",
   base: "/hacksureste/",
-  buildDir: "docs",
   /*
    ** Headers of the page
    */
