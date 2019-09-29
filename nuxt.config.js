@@ -14,7 +14,15 @@ module.exports = {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "https://fonts.googleapis.com/css?family=Nunito:700,800,900&display=swap"
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -24,6 +32,9 @@ module.exports = {
    ** Global CSS
    */
   css: ["element-ui/lib/theme-chalk/index.css"],
+  router: {
+    linkExactActiveClass: "exact-active-link"
+  },
   /*
    ** Plugins to load before mounting the App
    */

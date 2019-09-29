@@ -17,7 +17,8 @@ el-container
           template(slot='title')
             i.el-icon-s-order
             | Tareas
-          el-menu-item(index='app-tasks' :route="{name: 'app-tasks'}") Añadir tarea
+          el-menu-item(index='app-tasks' :route="{name: 'app-tasks'}") Ver tareas
+          el-menu-item(index='app-tasks-agregar' :route="{name: 'app-tasks-agregar-name'}") Añadir tarea
           el-menu-item(index='app-tasks-types' :route="{name: 'app-tasks-types'}") Categorías
         //- el-menu-item(index='tasks' :route="{name: 'app-tasks'}")
           i.el-icon-s-order
@@ -34,12 +35,14 @@ el-container
 html,
 body,
 #__nuxt,
-#__layout,
-.el-container {
+#__layout {
   height: 100%;
 }
 body {
   margin: 0;
+}
+.el-container {
+  min-height: 100%;
 }
 .sidebar {
   background-image: linear-gradient(to bottom right, #00c4ff 0%, #209cee 100%);

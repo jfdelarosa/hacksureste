@@ -9,39 +9,38 @@ el-container
         el-popover.pull-right.inline-block(v-if="!user" placement='bottom' trigger='hover')
           el-form.header-form(ref='ruleForm' :model="login")
             el-form-item(label='Correo electrónico')
-              el-input(type='text' v-model='register.email' placeholder="john.doe@gmail.com")
+              el-input(type='text' size="small" v-model='register.email' placeholder="john.doe@gmail.com")
             el-form-item(label='Nombre')
-              el-input(type='text' v-model='register.name' placeholder="John Doe")
+              el-input(type='text' size="small" v-model='register.name' placeholder="John Doe")
             el-form-item(label='Contraseña')
-              el-input(type='password' v-model="register.password1" placeholder="••••••")
+              el-input(type='password' size="small" v-model="register.password1" placeholder="••••••")
             el-form-item(label='Repetir contraseña')
-              el-input(type='password' v-model="register.password2" placeholder="••••••")
+              el-input(type='password' size="small" v-model="register.password2" placeholder="••••••")
             el-form-item
-              el-button(type='primary' v-on:click="sendRegister") Enviar
+              el-button(type='primary' size="small" v-on:click="sendRegister") Enviar
           el-menu-item.has-button.pull-right(slot='reference')
             el-button(type="primary" round) Registrarse
 
         el-popover.pull-right.inline-block(v-if="!user" placement='bottom' trigger='hover')
           el-form.header-form(ref='ruleForm' :model="login")
             el-form-item(label='Usuario')
-              el-input(type='text' v-model='login.email' v-on:keyup.enter.native="sendLogin" placeholder="john.doe" autofocus)
+              el-input(type='text' size="small" v-model='login.email' v-on:keyup.enter.native="sendLogin" placeholder="john.doe" autofocus)
             el-form-item(label='Contraseña')
-              el-input(type='password' v-model='login.password' v-on:keyup.enter.native="sendLogin" placeholder="••••••")
+              el-input(type='password' size="small" v-model='login.password' v-on:keyup.enter.native="sendLogin" placeholder="••••••")
             el-form-item
-              el-button(type='primary' v-on:click="sendLogin") Entrar
+              el-button(type='primary' size="small" v-on:click="sendLogin") Entrar
           el-menu-item(slot='reference') Iniciar Sesión
 
         el-menu-item.has-button.pull-right(v-if="user" index="app" :route="{name: 'app'}")
           el-button(type="primary" round) Ir a la App
     div
-      h1.title Titulo
-      h3.subtitle subtitulo
+      h1.title KatBox
+      h3.subtitle Aumenta la productividad y la felicidad de tus empleados
     svg(viewBox='0 0 100 25' preserveAspectRatio="none" height="200px")
         path(fill='#FFFFFF' opacity='0.7' d='M0 30 V15 Q30 3 60 15 V30z')
         path(fill='#FFFFFF' d='M0 30 V12 Q30 17 55 12 T100 11 V30z')
   el-main
-    el-button Default
-    slot
+    nuxt
     footer
       p Diseñado por&nbsp;
         a(href="#") KitKat
@@ -51,6 +50,7 @@ el-container
 import "element-ui/lib/theme-chalk/reset.css";
 
 export default {
+  name: "landing",
   data: () => ({
     user: null,
     loginOk: null,
@@ -155,10 +155,15 @@ header .subtitle {
   margin: 0;
 }
 header .title {
-  font-size: 2.5rem;
+  font-size: 4rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
 }
 header .subtitle {
-  font-size: 1.75rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 .pull-right {
   float: right;
