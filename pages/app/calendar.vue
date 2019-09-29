@@ -39,23 +39,6 @@ export default {
       .catch(e => {
         console.log(e);
       });
-
-    // this.$axios
-    // .$get("http://5d900d85b9f5430014c26e65.mockapi.io/tasks")
-    // .then(res => {
-    //   this.loading = false;
-    //   this.events = res.map(item => {
-    //     let eventStart = new Date(item.date_opening);
-    //     let eventEnd = new Date(
-    //       eventStart.setHours(eventStart.getHours() + 1)
-    //     );
-    //     item.startDate = eventStart;
-    //     item.endDate = eventEnd;
-    //     item.class = "leisure";
-    //     return item;
-    //   });
-    //   console.log(this.events);
-    // });
   }
 };
 </script>
