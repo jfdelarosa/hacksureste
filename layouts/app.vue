@@ -26,10 +26,10 @@ el-container
           span Tareas
   el-container
     el-header
-      .header asd
+      .header
+        span(v-on:click="$router.push({name: 'index'})") Salir
     el-main
       nuxt
-    el-footer Pie de página
 </template>
 
 <style>
@@ -67,6 +67,8 @@ body {
 }
 .el-header .header {
   padding: 1rem 0;
+  text-align: right;
+  cursor: pointer;
 }
 .el-submenu__title,
 .el-menu-item {
