@@ -1,5 +1,6 @@
 module.exports = {
   mode: "spa",
+  buildDir: "docs",
   /*
    ** Headers of the page
    */

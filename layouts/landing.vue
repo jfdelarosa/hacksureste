@@ -114,7 +114,7 @@ export default {
 
 <style scoped>
 body {
-  background: white;
+  background: white !important;
   padding: 0;
 }
 .container {

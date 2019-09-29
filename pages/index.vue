@@ -44,7 +44,7 @@
           el-col.has-img.hidden-xs-only(:xs="24" :sm="12" :md="8" :lg="8" :xl="16")
             img(src="/undraw_celebration_0jvk.svg")
     section.last-cta
-      h2.title ¿Tienes alguna duda sobre KatBox?
+      h2.title ¿Tienes alguna duda sobre CatBox?
       h3.subtitle ¡Ponte en contacto con nosotros!
       el-button(type="success" round) Enviar mensaje
 </template>
