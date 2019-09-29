@@ -1,24 +1,13 @@
 <template lang="pug">
   el-table(:data="data")
-    el-table-column(prop="nombre" label="Nombre")
-    el-table-column(prop="email" label="Correo Electrónico")
+    el-table-column(prop="user_name" label="Nombre")
+    el-table-column(prop="user_email" label="Correo Electrónico")
 </template>
 <script>
 export default {
   layout: "app",
   data: () => ({
-    data: [
-      {
-        id: 3,
-        nombre: "JAZIR ESTRELLA",
-        email: "asd@asd1.com"
-      },
-      {
-        id: 5,
-        nombre: "asdasdas 2",
-        email: "as2d@asd.com"
-      }
-    ]
+    data: []
   }),
   methods: {
     addTask(id) {
@@ -31,6 +20,17 @@ export default {
       console.log(id);
     }
   },
-  created() {}
+  created() {
+    fetch("https://smarcities.000webhostapp.com/Proyecto/list_users.php", {
+      method: "POST"
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.data = res.result;
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
 };
 </script>
